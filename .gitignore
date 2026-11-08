@@ -1,0 +1,17 @@
+node_modules/
+.next/
+test-results/
+playwright-report/
+# Local configuration and credentials
+.env*
+!.env.example
+*.pem
+*.key
+# Generated metadata, logs and local exports
+next-env.d.ts
+*.tsbuildinfo
+*.log
+coverage/
+output/
+work/
+.vercel/

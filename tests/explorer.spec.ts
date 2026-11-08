@@ -1,0 +1,21 @@
+import {test,expect} from '@playwright/test';
+test('viewer, case persistence and diagnostic controls',async({page})=>{
+const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('/');await expect(page.locator('canvas')).toBeVisible();
+await expect(page.getByRole('button',{name:'Rear block oil gallery plug',exact:true})).toBeVisible();
+await page.getByRole('button',{name:'Valve-cover gaskets',exact:true}).click();await expect(page.locator('.selected-location')).toContainText('Valve-cover gaskets');
+await page.getByLabel('Inspection status').selectOption('Inspected');
+await page.getByRole('button',{name:'Rear',exact:true}).click();
+await page.getByLabel('Exploded view').fill('0.6');await expect(page.locator('output')).toHaveText('60%');
+await page.getByRole('button',{name:'Intake manifold: solid',exact:true}).click();await expect(page.getByRole('button',{name:'Intake manifold: ghost',exact:true})).toBeVisible();
+await page.getByRole('button',{name:'Intake manifold: ghost',exact:true}).click();await expect(page.getByRole('button',{name:'Intake manifold: hidden',exact:true})).toBeVisible();
+await page.getByRole('button',{name:'Oil Migration',exact:true}).click();await expect(page.getByRole('button',{name:'Oil pathways',exact:true})).toHaveAttribute('aria-pressed','true');
+await page.getByRole('button',{name:'PCV System',exact:true}).click();await expect(page.getByRole('button',{name:'PCV flow',exact:true})).toHaveAttribute('aria-pressed','true');
+await page.getByRole('button',{name:'Inspection Access',exact:true}).click();await expect(page.getByText('Verify access before removing components.')).toBeVisible();
+await page.getByRole('button',{name:'Diagnostic Notes',exact:true}).click();await page.getByLabel('Case observations & next inspection steps').fill('First fresh oil requires confirmation.');await expect(page.getByText('Saved in this browser', {exact:true})).toBeVisible();
+const download=page.waitForEvent('download');await page.getByRole('button',{name:'Export case JSON'}).click();expect((await download).suggestedFilename()).toBe('aj133-diagnostic-case.json');
+await page.reload();await page.getByRole('button',{name:'Diagnostic Notes',exact:true}).click();await expect(page.getByLabel('Case observations & next inspection steps')).toHaveValue('First fresh oil requires confirmation.');
+await page.getByRole('button',{name:'Engine Viewer',exact:true}).click();await page.getByRole('button',{name:'Valve-cover gaskets',exact:true}).click();await expect(page.getByLabel('Inspection status')).toHaveValue('Inspected');
+await page.getByRole('button',{name:'Reset viewer',exact:true}).click();await expect(page.locator('output')).toHaveText('0%');await page.waitForTimeout(1500);await page.screenshot({path:'../work/desktop.png',fullPage:true});expect(errors).toEqual([]);
+});
+test('mobile sections and notes remain usable',async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto('/');await expect(page.locator('canvas')).toBeVisible();await page.getByRole('button',{name:'Installed',exact:true}).click();await page.getByRole('button',{name:'Diagnostic Notes',exact:true}).click();await page.getByLabel('Case observations & next inspection steps').fill('Mobile inspection');await expect(page.getByText('Saved in this browser',{exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'../work/mobile.png',fullPage:true})});
