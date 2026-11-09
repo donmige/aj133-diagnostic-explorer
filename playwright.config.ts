@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests',timeout:60000,expect:{timeout:15000},workers:1,use:{baseURL:'http://127.0.0.1:3000',launchOptions:{executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']},viewport:{width:1512,height:1100}},webServer:{command:process.env.PLAYWRIGHT_PRODUCTION?'npm start':'npm run dev',url:'http://127.0.0.1:3000',reuseExistingServer:true,timeout:120000}});

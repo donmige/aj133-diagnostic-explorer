@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Bellhousing_Envelope",
+    "assembly": "Bellhousing",
+    "explode": [
+      0.0,
+      0.0,
+      0.29
+    ]
+  },
+  {
+    "name": "Block",
+    "assembly": "Block",
+    "explode": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "Cooler_Gasket",
+    "assembly": "Oil cooler",
+    "explode": [
+      0.0,
+      0.13,
+      0.0
+    ]
+  },
+  {
+    "name": "Cooler_Valley",
+    "assembly": "Oil cooler",
+    "explode": [
+      0.0,
+      0.17,
+      0.0
+    ]
+  },
+  {
+    "name": "Cover_LH",
+    "assembly": "Valve covers",
+    "explode": [
+      -0.2,
+      0.23,
+      0.0
+    ]
+  },
+  {
+    "name": "Cover_RH",
+    "assembly": "Valve covers",
+    "explode": [
+      0.2,
+      0.23,
+      0.0
+    ]
+  },
+  {
+    "name": "Exhaust_LH",
+    "assembly": "Exhaust & shields",
+    "explode": [
+      -0.21,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Exhaust_RH",
+    "assembly": "Exhaust & shields",
+    "explode": [
+      0.21,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "name": "FrontCover",
+    "assembly": "Block",
+    "explode": [
+      0.0,
+      0.0,
+      -0.12
+    ]
+  },
+  {
+    "name": "Head_LH",
+    "assembly": "Cylinder heads",
+    "explode": [
+      -0.13,
+      0.11,
+      0.0
+    ]
+  },
+  {
+    "name": "Head_RH",
+    "assembly": "Cylinder heads",
+    "explode": [
+      0.13,
+      0.11,
+      0.0
+    ]
+  },
+  {
+    "name": "HeadGasket_LH",
+    "assembly": "Cylinder heads",
+    "explode": [
+      -0.08,
+      0.07,
+      0.0
+    ]
+  },
+  {
+    "name": "HeadGasket_RH",
+    "assembly": "Cylinder heads",
+    "explode": [
+      0.08,
+      0.07,
+      0.0
+    ]
+  },
+  {
+    "name": "Intake_NA",
+    "assembly": "Intake manifold",
+    "explode": [
+      0.0,
+      0.34,
+      0.0
+    ]
+  },
+  {
+    "name": "RearFace",
+    "assembly": "Rear face",
+    "explode": [
+      0.0,
+      0.0,
+      0.11
+    ]
+  },
+  {
+    "name": "RearSealCarrier",
+    "assembly": "Rear face",
+    "explode": [
+      0.0,
+      0.0,
+      0.16
+    ]
+  },
+  {
+    "name": "Shield_LH",
+    "assembly": "Exhaust & shields",
+    "explode": [
+      -0.3,
+      0.03,
+      0.0
+    ]
+  },
+  {
+    "name": "Shield_RH",
+    "assembly": "Exhaust & shields",
+    "explode": [
+      0.3,
+      0.03,
+      0.0
+    ]
+  },
+  {
+    "name": "Sump_L320",
+    "assembly": "Oil pan",
+    "explode": [
+      0.0,
+      -0.2,
+      0.0
+    ]
+  }
+]

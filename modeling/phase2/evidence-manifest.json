@@ -1,0 +1,508 @@
+{
+  "version": "phase2-r01",
+  "approval_scope": "separate model study only; not integrated or deployed",
+  "variant": "2012 L320 AJ133 5.0 naturally aspirated target; VIN/revisions unconfirmed",
+  "axes": "GLTF +X vehicle right, +Y up, +Z rear",
+  "units": "metres, estimated scale; NOT measured CAD",
+  "sources": {
+    "block": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+    "head": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+    "cover": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53055.43171/brand/land-rover/",
+    "cooler": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53047.43113/brand/land-rover/",
+    "exhaust": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+    "intake": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43099/brand/land-rover/",
+    "manual": "https://www.billswebspace.com/5.0V8.pdf"
+  },
+  "assemblies": [
+    {
+      "node": "Block",
+      "ui_assembly": "Block",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Head_LH",
+      "ui_assembly": "Cylinder heads",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        -0.13,
+        0.11,
+        0.0
+      ]
+    },
+    {
+      "node": "Head_RH",
+      "ui_assembly": "Cylinder heads",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.13,
+        0.11,
+        0.0
+      ]
+    },
+    {
+      "node": "Cover_LH",
+      "ui_assembly": "Valve covers",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53055.43171/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        -0.2,
+        0.23,
+        0.0
+      ]
+    },
+    {
+      "node": "Cover_RH",
+      "ui_assembly": "Valve covers",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53055.43171/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.2,
+        0.23,
+        0.0
+      ]
+    },
+    {
+      "node": "HeadGasket_LH",
+      "ui_assembly": "Cylinder heads",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        -0.08,
+        0.07,
+        0.0
+      ]
+    },
+    {
+      "node": "HeadGasket_RH",
+      "ui_assembly": "Cylinder heads",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.08,
+        0.07,
+        0.0
+      ]
+    },
+    {
+      "node": "Intake_NA",
+      "ui_assembly": "Intake manifold",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43099/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.34,
+        0.0
+      ]
+    },
+    {
+      "node": "Cooler_Valley",
+      "ui_assembly": "Oil cooler",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53047.43113/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.17,
+        0.0
+      ]
+    },
+    {
+      "node": "Cooler_Gasket",
+      "ui_assembly": "Oil cooler",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53047.43113/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.13,
+        0.0
+      ]
+    },
+    {
+      "node": "Exhaust_LH",
+      "ui_assembly": "Exhaust & shields",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        -0.21,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "node": "Exhaust_RH",
+      "ui_assembly": "Exhaust & shields",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.21,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "node": "Shield_LH",
+      "ui_assembly": "Exhaust & shields",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        -0.3,
+        0.03,
+        0.0
+      ]
+    },
+    {
+      "node": "Shield_RH",
+      "ui_assembly": "Exhaust & shields",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.3,
+        0.03,
+        0.0
+      ]
+    },
+    {
+      "node": "RearFace",
+      "ui_assembly": "Rear face",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.0,
+        0.11
+      ]
+    },
+    {
+      "node": "RearSealCarrier",
+      "ui_assembly": "Rear face",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.0,
+        0.16
+      ]
+    },
+    {
+      "node": "Bellhousing_Envelope",
+      "ui_assembly": "Bellhousing",
+      "geometry_status": "UNVERIFIED_ENVELOPE",
+      "source_url": "https://www.billswebspace.com/5.0V8.pdf",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.0,
+        0.29
+      ]
+    },
+    {
+      "node": "Sump_L320",
+      "ui_assembly": "Oil pan",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://www.billswebspace.com/5.0V8.pdf",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        -0.2,
+        0.0
+      ]
+    },
+    {
+      "node": "FrontCover",
+      "ui_assembly": "Block",
+      "geometry_status": "APPROXIMATE",
+      "source_url": "https://www.billswebspace.com/5.0V8.pdf",
+      "dimensions": "visual estimates",
+      "explode_vector_gltf": [
+        0.0,
+        0.0,
+        -0.12
+      ]
+    }
+  ],
+  "diagnostic_anchors": [
+    {
+      "id": "gallery",
+      "node": "anchor__gallery",
+      "parent": "RearFace",
+      "position_gltf": [
+        -0.09,
+        0.09,
+        0.3
+      ],
+      "status": "UNVERIFIED_REGION",
+      "physical_geometry": false
+    },
+    {
+      "id": "head-plugs",
+      "node": "anchor__head-plugs",
+      "parent": "Head_RH",
+      "position_gltf": [
+        0.25,
+        0.32,
+        0.28
+      ],
+      "status": "UNVERIFIED_REGION",
+      "physical_geometry": false
+    },
+    {
+      "id": "head-gasket",
+      "node": "anchor__head-gasket",
+      "parent": "HeadGasket_LH",
+      "position_gltf": [
+        -0.29,
+        0.12,
+        0.05
+      ],
+      "status": "VERIFIED_INTERFACE_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "valve-cover",
+      "node": "anchor__valve-cover",
+      "parent": "Cover_LH",
+      "position_gltf": [
+        -0.35,
+        0.26,
+        -0.05
+      ],
+      "status": "VERIFIED_INTERFACE_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "pcv",
+      "node": "anchor__pcv",
+      "parent": "Cover_RH",
+      "position_gltf": [
+        0.22,
+        0.47,
+        -0.15
+      ],
+      "status": "VERIFIED_COMPONENT_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "cooler",
+      "node": "anchor__cooler",
+      "parent": "Cooler_Valley",
+      "position_gltf": [
+        0,
+        0.18,
+        -0.02
+      ],
+      "status": "VERIFIED_COMPONENT_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "vacuum",
+      "node": "anchor__vacuum",
+      "parent": "RearFace",
+      "position_gltf": [
+        0.22,
+        0.15,
+        0.3
+      ],
+      "status": "UNVERIFIED_REGION",
+      "physical_geometry": false
+    },
+    {
+      "id": "cam",
+      "node": "anchor__cam",
+      "parent": "Head_RH",
+      "position_gltf": [
+        0.3,
+        0.3,
+        -0.2
+      ],
+      "status": "UNVERIFIED_REGION",
+      "physical_geometry": false
+    },
+    {
+      "id": "valley",
+      "node": "anchor__valley",
+      "parent": "Block",
+      "position_gltf": [
+        0,
+        0.09,
+        0.12
+      ],
+      "status": "ILLUSTRATIVE_REGION",
+      "physical_geometry": false
+    },
+    {
+      "id": "exhaust",
+      "node": "anchor__exhaust",
+      "parent": "Exhaust_LH",
+      "position_gltf": [
+        -0.46,
+        0.12,
+        0.1
+      ],
+      "status": "VERIFIED_COMPONENT_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "rear-main",
+      "node": "anchor__rear-main",
+      "parent": "RearSealCarrier",
+      "position_gltf": [
+        0,
+        -0.055,
+        0.318
+      ],
+      "status": "VERIFIED_INTERFACE_APPROXIMATE_POSITION",
+      "physical_geometry": false
+    },
+    {
+      "id": "bellhousing",
+      "node": "anchor__bellhousing",
+      "parent": "Bellhousing_Envelope",
+      "position_gltf": [
+        0,
+        -0.34,
+        0.34
+      ],
+      "status": "ILLUSTRATIVE_REGION",
+      "physical_geometry": false
+    }
+  ],
+  "unresolved": [
+    "Rear block oil-gallery plug identity, position and oil connections",
+    "Rear cylinder-head ball-plug identities, positions and passage connections",
+    "Exact casting/cover/carrier revisions",
+    "Installed chassis/firewall/gearbox clearances",
+    "Valley drains and actual oil migration",
+    "Exact PCV hose curves and hidden separator geometry"
+  ],
+  "excluded": [
+    "internal rotating engine parts",
+    "invented gallery or manufacturing plug meshes",
+    "unverified holes or fastener patterns",
+    "validated service routes"
+  ],
+  "performance_targets": {
+    "glb_megabytes_max": 8,
+    "triangles_max": 180000,
+    "draw_calls_target_max": 60
+  },
+  "evidence_facts": [
+    {
+      "id": "F01",
+      "feature": "Valley oil cooler and separate gasket",
+      "identity": "verified in NA catalogue drawing",
+      "geometry": "approximate silhouette, scale and flange outline",
+      "source": "cooler",
+      "drawing": "P0190565-02",
+      "callouts": [
+        "6A642",
+        "6L621"
+      ]
+    },
+    {
+      "id": "F02",
+      "feature": "RH cam cover twin PCV caps",
+      "identity": "verified in cover drawing and NA training illustration",
+      "geometry": "estimated cap diameters/centres and hose curves",
+      "source": "cover",
+      "drawing": "P0190624-05",
+      "callouts": [
+        "6582A",
+        "13B802"
+      ],
+      "manual_printed_page": "3-32",
+      "manual_pdf_page": 116
+    },
+    {
+      "id": "F03",
+      "feature": "Separate LH and RH exhaust manifolds/shields",
+      "identity": "verified bank-specific catalogue assemblies",
+      "geometry": "estimated profiles, runner trajectories, thickness and shield clearance",
+      "source": "exhaust",
+      "drawing": "P0190562-03",
+      "callouts": [
+        "9430A",
+        "9430B",
+        "9A462A",
+        "9A462B"
+      ]
+    },
+    {
+      "id": "F04",
+      "feature": "Cylinder heads and external gasket interface",
+      "identity": "verified component/interface",
+      "geometry": "estimated bank-specific casting shell; rear-face small details omitted",
+      "source": "head",
+      "drawing": "P0190560-04",
+      "callouts": [
+        "6049",
+        "6051"
+      ]
+    },
+    {
+      "id": "F05",
+      "feature": "NA variable intake architecture",
+      "identity": "verified NA system architecture",
+      "geometry": "runner/plenum shapes and actuator sizes estimated",
+      "source": "intake",
+      "manual_printed_page": "2-12",
+      "manual_pdf_page": 36
+    },
+    {
+      "id": "F06",
+      "feature": "Rear crankshaft seal carrier",
+      "identity": "verified carrier/interface, revision NOT selected",
+      "geometry": "generic interpretation; not either measured catalogue revision",
+      "source": "block",
+      "drawing": "P0190547-07",
+      "callouts": [
+        "6K301A",
+        "6K301B"
+      ]
+    },
+    {
+      "id": "F07",
+      "feature": "Rear block oil-gallery and rear head ball-style plugs",
+      "identity": "UNRESOLVED; no oil-passage connection established",
+      "geometry": "NONE; anchor regions only",
+      "source": "block",
+      "note": "Catalogue plug callouts do not establish fluid function; no plug copied into geometry."
+    },
+    {
+      "id": "F08",
+      "feature": "Bellhousing, vacuum pump and cam sensor anchors",
+      "identity": "specific geometry/locations unverified",
+      "geometry": "bellhousing envelope only; pump/sensor physical meshes omitted",
+      "source": "manual",
+      "note": "No service-access or clearance inference."
+    }
+  ],
+  "review_gates": [
+    "Separate model render review before any viewer replacement",
+    "Confirm VIN/engine serial and revision-specific features",
+    "Confirm plug identity before converting regional marker into a physical feature",
+    "Review measured clearances before any validated inspection route"
+  ]
+}
