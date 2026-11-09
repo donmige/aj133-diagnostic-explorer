@@ -269,14 +269,19 @@ views={'assembled':(-1.25,1.1,-1.5),'rear':(.85,.7,1.65),'top':(0,2,.001),'left'
 # Save assembled editable source, with camera and studio kept outside engine root.
 cam.location=V(views['assembled']);cam.rotation_euler=(V((0,.10,.08))-cam.location).to_track_quat('-Z','Y').to_euler()
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'aj133-na-exterior-r01.blend'))
+def hide_group(key):
+ for ob in [ASSEMBLIES[key]]+list(ASSEMBLIES[key].children_recursive):ob.hide_render=True
+
 if a.render:
  for view,position in views.items():
-  for g in ASSEMBLIES.values():g.hide_render=False;g.location=(0,0,0)
-  if view in ['valley','rear-exposed']:ASSEMBLIES['Bellhousing_Envelope'].hide_render=True
+  for g in ASSEMBLIES.values():
+   g.location=(0,0,0)
+   for ob in [g]+list(g.children_recursive):ob.hide_render=False
+  if view in ['valley','rear-exposed']:hide_group('Bellhousing_Envelope')
   if view=='valley':
-   ASSEMBLIES['Intake_NA'].hide_render=True
+   hide_group('Intake_NA')
   if view=='rear-exposed':
-   ASSEMBLIES['Shield_LH'].hide_render=True;ASSEMBLIES['Shield_RH'].hide_render=True
+   hide_group('Shield_LH');hide_group('Shield_RH')
   if view=='exploded':
    for g in ASSEMBLIES.values():g.location=V(g['explode_vector_gltf'])
   cam.data.ortho_scale=1.85 if view=='exploded' else 1.65
