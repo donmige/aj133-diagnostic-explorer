@@ -91,7 +91,7 @@ profile=[(-.205,-.19),(.205,-.19),(.23,-.11),(.23,.045),(.17,.11),(-.17,.11),(-.
 loft('Deep skirt casting', [[(x,y,z) for x,y in profile] for z in [-.295,.28]],'Block','cast',.008)
 for side in [-1,1]:
  sections=[]
- for z in [-.29,.28]:sections.append([(side*x,y,z) for x,y in [(.075,.035),(.205,-.04),(.355,.145),(.22,.28),(.16,.23)]])
+ for z in [-.29,.28]:sections.append([(side*x,y,z) for x,y in [(.075,.035),(.205,-.04),(.30,.11),(.11,.30),(.085,.20)]])
  loft('V-bank exterior '+str(side),sections,'Block','cast',.005)
  for j,z in enumerate([-.23,-.09,.06,.20]):
   tube('External rib / approximate '+str(side)+' '+str(j),[(side*.218,-.15,z),(side*.255,.015,z),(side*.32,.11,z+.017)],.009,'Block','cast',6)
