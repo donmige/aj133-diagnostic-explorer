@@ -1,21 +1,20 @@
 'use client';
-import {Canvas,useThree,useFrame} from '@react-three/fiber';
+import {Canvas,useThree} from '@react-three/fiber';
 import {OrbitControls,Line,ContactShadows,Grid,RoundedBox} from '@react-three/drei';
-import {useEffect,useRef} from 'react';
+import {Suspense,useEffect} from 'react';
+import {Marker} from './DiagnosticMarker';
+import Phase2B from './Phase2B';
+import diagnosticData from '../lib/phase2b-diagnostics.json';
+import type {ModelVersion} from '../lib/model';
 import {Vector3} from 'three';
 import {points,View} from '../lib/data';
+const approaches=diagnosticData.camera_approaches;
 export type AssemblyState=Record<string,'solid'|'ghost'|'hidden'>;
-type Props={reset:number;view:View;explode:number;assembly:AssemblyState;selected:string;onSelect:(id:string)=>void;markers:boolean;oil:boolean;pcv:boolean;scope:boolean;installed:boolean};
+export type Props={model:ModelVersion;approach:number;overlays:string[];onModelError:()=>void;onComponentSelect:(name:string)=>void;reset:number;view:View;explode:number;assembly:AssemblyState;selected:string;onSelect:(id:string)=>void;markers:boolean;oil:boolean;pcv:boolean;scope:boolean;installed:boolean};
 const poses:Record<View,[number,number,number]>={Perspective:[-5,3.6,-6],Front:[0,1,-7],Rear:[0,1,7],Top:[0,7,.01],Left:[-7,1,0],Right:[7,1,0],Bottom:[0,-7,.01]};
-function Camera({view,reset}:{view:View;reset:number}){const {camera,controls}=useThree();useEffect(()=>{camera.position.set(...poses[view]);camera.lookAt(0,.3,0);camera.updateProjectionMatrix();const orbit=controls as unknown as {target:Vector3;update:()=>void}|null;if(orbit){orbit.target.set(0,.3,0);orbit.update()}},[camera,controls,view,reset]);return null}
+function Camera({view,reset,approach}:{view:View;reset:number;approach:number}){const {camera,controls}=useThree();useEffect(()=>{const proposed=approaches[approach];camera.position.set(...(proposed?proposed.position.map(v=>v*3.5) as [number,number,number]:poses[view]));camera.lookAt(0,.3,0);camera.updateProjectionMatrix();const orbit=controls as unknown as {target:Vector3;update:()=>void}|null;if(orbit){orbit.target.set(...(proposed?proposed.target.map(v=>v*3.5) as [number,number,number]:[0,.3,0] as [number,number,number]));orbit.update()}},[camera,controls,view,reset,approach]);return null}
 function Box({name,at,size,color,rotation=[0,0,0],assembly}:{name:string;at:[number,number,number];size:[number,number,number];color:string;rotation?:[number,number,number];assembly:AssemblyState}){const s={visible:assembly[name]!=='hidden',opacity:assembly[name]==='ghost'?.18:1};return <group visible={s.visible}><RoundedBox position={at} args={size} radius={.07} smoothness={3} rotation={rotation}><meshStandardMaterial color={color} roughness={.56} metalness={.65} transparent opacity={s.opacity}/></RoundedBox></group>}
 
-function Marker({point,index,selected,onSelect}:{point:typeof points[number];index:number;selected:boolean;onSelect:(id:string)=>void}){
-const {gl,camera}=useThree();const ref=useRef<HTMLButtonElement|null>(null);const vector=useRef(new Vector3());
-useEffect(()=>{const button=document.createElement('button');button.style.position='absolute';button.style.zIndex='20';button.setAttribute('aria-label',point.name);button.title=point.name;button.textContent=String(index+1).padStart(2,'0');button.onclick=()=>onSelect(point.id);gl.domElement.parentElement!.appendChild(button);ref.current=button;return()=>{button.remove();ref.current=null}},[gl,index,point,onSelect]);
-useEffect(()=>{if(ref.current)ref.current.className='marker '+(selected?'selected':'')},[selected,onSelect]);
-useFrame(()=>{const button=ref.current;if(!button)return;const v=vector.current.set(...point.position);v.y+=.25;v.project(camera);const width=gl.domElement.clientWidth,height=gl.domElement.clientHeight;button.style.left=((v.x+1)*width/2-12.5)+'px';button.style.top=((-v.y+1)*height/2-12.5)+'px';button.style.display=v.z>1||v.z< -1?'none':'block'});return null;
-}
 
 function Engine(p:Props){
 const state=(name:string)=>({visible:p.assembly[name]!=='hidden',opacity:p.assembly[name]==='ghost'?.18:1});
@@ -37,10 +36,12 @@ return <group position={[0,.25,0]}>
 <mesh visible={state('Bellhousing').visible} position={[0,-.18,1.95+e*1.2]} rotation={[Math.PI/2,0,0]}><cylinderGeometry args={[1.05,.72,1.0,12]}/><meshStandardMaterial color="#5c6b70" metalness={.65} roughness={.6} transparent opacity={state('Bellhousing').opacity}/></mesh>
 <Box assembly={p.assembly} name="Oil pan" at={[0,-.88-e*.8,0]} size={[1.6,.5,2.5]} color="#323f44"/>
 <mesh position={[0,-.05,-1.5]} rotation={[Math.PI/2,0,0]}><cylinderGeometry args={[.38,.38,.25,24]}/><meshStandardMaterial color="#29383c" metalness={.8} roughness={.4}/></mesh>
-{p.markers&&points.map((point,i)=><Marker key={point.id} point={point} index={i} selected={p.selected===point.id} onSelect={p.onSelect}/>)}
+{p.markers&&points.map((point,i)=><Marker key={point.id} point={point} index={i} selected={p.selected===point.id} onSelect={p.onSelect} offset={schematicOffset(point.id,e)}/>)}
 {p.oil&&<><Line points={[[-1.1,1.25,-.3],[-1.32,.6,-.2],[-1.65,.15,.2],[-1.3,-.4,.9],[0,-.96,1.95]]} color="#ffb55c" lineWidth={3} dashed dashSize={.13} gapSize={.1}/><Line points={[[0,.95,.3],[.3,.4,1.1],[.8,-.1,1.5],[0,-.96,1.95]]} color="#ffb55c" lineWidth={3} dashed dashSize={.13} gapSize={.1}/></>}
 {p.pcv&&<Line points={[[-1.05,1.55,-.65],[-.65,1.85,-.6],[0,1.9,-.4],[.65,1.85,-.6],[1.05,1.55,-.65]]} color="#68d5e5" lineWidth={4} dashed dashSize={.18} gapSize={.12}/>}
 {p.scope&&<Line points={[[2.5,2.2,2.5],[1.8,1.9,1.7],[.8,1.65,1.25],[0,.95,.35]]} color="#b9a2ff" lineWidth={4} dashed dashSize={.1} gapSize={.12}/>}
 {p.installed&&<group><RoundedBox args={[5,.12,5.8]} position={[0,-1.65,0]} radius={.05}><meshStandardMaterial color="#30434b" wireframe/></RoundedBox><RoundedBox args={[4.9,2.8,.15]} position={[0,.2,3.3]} radius={.04}><meshStandardMaterial color="#405560" transparent opacity={.2}/></RoundedBox>{[-2.4,2.4].map(x=><RoundedBox key={x} args={[.2,1,5.8]} position={[x,-.6,0]} radius={.03}><meshStandardMaterial color="#405560" transparent opacity={.3}/></RoundedBox>)}</group>}
 </group>}
-export default function EngineScene(props:Props){return <Canvas shadows camera={{position:poses.Perspective,fov:40}} gl={{antialias:true,preserveDrawingBuffer:true}}><color attach="background" args={['#101a20']}/><fog attach="fog" args={['#101a20',12,25]}/><ambientLight intensity={1.2}/><directionalLight position={[-4,8,-4]} intensity={3}/><directionalLight position={[5,3,4]} intensity={2} color="#a3d9e2"/><Camera view={props.view} reset={props.reset}/><Engine {...props}/><Grid position={[0,-1.55,0]} args={[14,14]} cellSize={.5} cellThickness={.5} cellColor="#24353c" sectionSize={2} sectionColor="#34474d" fadeDistance={16}/><ContactShadows position={[0,-1.5,0]} opacity={.4} scale={10} blur={2.5} far={5}/><OrbitControls makeDefault target={new Vector3(0,.3,0)} minDistance={3} maxDistance={13}/></Canvas>}
+export default function EngineScene(props:Props){return <Canvas shadows camera={{position:poses.Perspective,fov:40}} dpr={[1,1.5]} gl={{antialias:true}}><color attach="background" args={['#101a20']}/><fog attach="fog" args={['#101a20',12,25]}/><ambientLight intensity={1.2}/><directionalLight position={[-4,8,-4]} intensity={3}/><directionalLight position={[5,3,4]} intensity={2} color="#a3d9e2"/><Camera view={props.view} reset={props.reset} approach={props.approach}/>{props.model==='schematic'?<Engine {...props}/>:<Suspense fallback={null}><Phase2B {...props}/></Suspense>}<Grid position={[0,-1.55,0]} args={[14,14]} cellSize={.5} cellThickness={.5} cellColor="#24353c" sectionSize={2} sectionColor="#34474d" fadeDistance={16}/><ContactShadows position={[0,-1.5,0]} opacity={.4} scale={10} blur={2.5} far={5}/><OrbitControls makeDefault target={new Vector3(0,.3,0)} minDistance={3} maxDistance={13}/></Canvas>}
+
+function schematicOffset(id:string,e:number):[number,number,number]{switch(id){case 'head-plugs':case 'cam':return [.45*e,.4*e,0];case 'head-gasket':return [-.45*e,.4*e,0];case 'valve-cover':return [-.7*e,.9*e,0];case 'pcv':return [.7*e,.9*e,0];case 'cooler':return [0,.3*e,-.5*e];case 'gallery':case 'vacuum':case 'rear-main':return [0,0,.5*e];case 'exhaust':return [-.6*e,0,0];case 'bellhousing':return [0,0,1.2*e];default:return [0,0,0]}}
