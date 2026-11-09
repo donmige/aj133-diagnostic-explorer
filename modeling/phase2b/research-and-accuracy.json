@@ -1,0 +1,177 @@
+{
+  "version": "phase2b-r01",
+  "scope": "Separate model/review artifact only. No production application changes, merge or deployment.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "JLR NP10-V8JLR 04/2009 technical training",
+      "url": "https://www.billswebspace.com/5.0V8.pdf",
+      "type": "Manufacturer document, third-party host",
+      "reviewed": "Printed 3-4 (PDF 88), 2-30 (PDF 54), 2-49 (PDF 73), 2-54 (PDF 78), 3-32 (PDF 116).",
+      "limit": "Training architecture and labelled components, not 2012 measured casting geometry or current service procedures."
+    },
+    {
+      "id": "S2",
+      "title": "SSM51477 \u2014 5.0 Oil Rear of Engine PDI",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2013/MC-10072200-0699.pdf",
+      "type": "Manufacturer communication hosted by NHTSA",
+      "reviewed": "One page; last modified 11-Jan-2013. L320 listed.",
+      "limit": "Documents an upper rear threaded block-plug source and lower bellhousing accumulation pattern, referencing SSM49817. It also discusses anti-corrosion oil at PDI. Neither is an automatic diagnosis for this in-service vehicle. No exact model-space coordinates are supplied."
+    },
+    {
+      "id": "S3",
+      "title": "SSM49817 reproduced text and illustration",
+      "url": "https://lemon-manuals.org.ua/Land%20Rover/2012/LR4%20Base/Repair%20and%20Diagnosis/Quick%20Lookups/Technical%20Bulletins/Technical%20Service%20Bulletins/Mechanical/5.0%20Cylinder%20Block%20Oil%20Gallery%20Plug%20Leak%20%28SSM49817%29/",
+      "type": "Secondary reproduction of manufacturer material",
+      "reviewed": "Text and figure G00376236 inspected; figure identifies LR008871.",
+      "limit": "Original factory-hosted attachment not retrieved. Reproduction is not treated as independent proof of measured 3D centre, bank side, or any rear head ball-plug function. Primary SSM51477 independently references the block-plug concern."
+    },
+    {
+      "id": "S4",
+      "title": "L320 NA block and plugs \u2014 P0190547-07",
+      "url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+      "type": "Manufacturer parts catalogue",
+      "reviewed": "Drawing and callouts, including HP1\u2013HP4 and 6K301A/B, reviewed.",
+      "limit": "Catalogue callouts alone do not establish all fluid connections. Rear carrier revisions depend on engine serial; exact vehicle revision is not selected."
+    },
+    {
+      "id": "S5",
+      "title": "L320 NA cylinder head \u2014 P0190560-04",
+      "url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/",
+      "type": "Manufacturer parts catalogue",
+      "reviewed": "Head outline, exterior relationships and gasket 6051.",
+      "limit": "No confirmed rear ball-plug map. No measured rear casting profiles or under-manifold oil-closure locations recovered."
+    },
+    {
+      "id": "S6",
+      "title": "L320 NA exhaust manifolds \u2014 P0190562-03",
+      "url": "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43102/brand/land-rover/",
+      "type": "Manufacturer parts catalogue",
+      "reviewed": "Separate LH/RH manifolds, mounting relationship, gaskets and shields.",
+      "limit": "Profiles reconstructed approximately; thickness, stand-offs, fastener centres and installed clearances unmeasured. No particular casting/manufacturing method is claimed."
+    },
+    {
+      "id": "S7",
+      "title": "Jaguar factory V8 macro photographs",
+      "url": "https://media.jlr.com/jaguar/image-packs/jaguar-v8-engine-macro-components",
+      "type": "Manufacturer media",
+      "reviewed": "Block/valley material and broad casting appearance.",
+      "limit": "Not a complete 2012 L320 NA reference set. Supercharger images are not imported as evidence of NA component interchangeability."
+    }
+  ],
+  "features": [
+    {
+      "feature": "Rear LH/RH head casting shoulders",
+      "identity": "Cylinder heads verified; detailed rear shape unresolved",
+      "geometry": "APPROXIMATE_DRAWING_GUIDED_ENVELOPE",
+      "change": "Multi-section longitudinal shoulders, rear taper and deck boundaries replace the uniform Phase 2 extrusion.",
+      "remaining": "Photos of both actual rear head castings and dimensions are still needed. The bank shells use a shared conservative envelope where bank-specific rear detail is missing; this is not evidence of true casting symmetry. No bolt/ball/casting-plug pattern has been added.",
+      "sources": [
+        "S1",
+        "S5"
+      ]
+    },
+    {
+      "feature": "NA rear CPS solenoid envelopes",
+      "identity": "NA component identified in training 3-4",
+      "geometry": "IDENTIFIED_COMPONENT_ESTIMATED_POSITION_AND_SHAPE",
+      "change": "Exterior actuator envelopes added to prevent treating every rear-head projection as a plug.",
+      "remaining": "These are camshaft-profile-switching components, NOT gallery plugs. Mounting centre, connector size and clearance are estimated.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "feature": "Rear head ball-style plugs",
+      "identity": "UNRESOLVED",
+      "geometry": "NO_PHYSICAL_PLUG_GEOMETRY",
+      "change": "Separate LH/RH selectable investigation regions.",
+      "remaining": "Presence, exact centres, dimensions, fluid connection and pressure status not established. A highlighted region is not evidence of a plug or leak.",
+      "sources": [
+        "S1",
+        "S5"
+      ]
+    },
+    {
+      "feature": "Upper rear block gallery plug",
+      "identity": "DOCUMENTED_POSSIBLE_LEAK_SOURCE",
+      "geometry": "APPROXIMATE_INVESTIGATION_REGION_ONLY",
+      "change": "Region status upgraded from brief-only suspicion to source-documented, with exact position still unverified.",
+      "remaining": "The broad investigation band does not identify a plug centre or bank. No physical plug, drilling or passage modeled. This does not establish an active leak on the case vehicle.",
+      "sources": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "feature": "Rear casting, carrier and bellhousing interface",
+      "identity": "Components/interfaces verified",
+      "geometry": "APPROXIMATE_SILHOUETTE_AND_INTERFACE",
+      "change": "Stepped rear casting edge, visible perimeter flange, refined carrier outline and broad reinforcement language.",
+      "remaining": "Carrier revision, all dimensions and gearbox casting are unverified. No hole/fastener pattern or service opening inferred.",
+      "sources": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "feature": "Exhaust manifolds, flanges and shields",
+      "identity": "Separate bank assemblies verified",
+      "geometry": "APPROXIMATE_EXTERNAL_PROFILES",
+      "change": "Continuous mounting lands, smooth transported-frame runners, coherent collectors and contoured shield envelopes.",
+      "remaining": "Port pitch, thickness, standoff and clearance are visual estimates. Shield removal in a view is not a service instruction.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "feature": "Additional closures beneath NA manifolds",
+      "identity": "UNRESOLVED",
+      "geometry": "NO_ADDITIONAL_PLUG_GEOMETRY",
+      "change": "Selectable hidden block-side regions allow inspection discussion without asserting closures.",
+      "remaining": "Reviewed sources did not establish their locations and functions. This is not proof that closures are absent. SC catalogue plug entries are not extrapolated to NA.",
+      "sources": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "feature": "Head gasket perimeter",
+      "identity": "External sealing interface verified",
+      "geometry": "ESTIMATED_EXTERNAL_BOUNDARY",
+      "change": "Distinct per-bank interface geometry and selectable cyan outlines.",
+      "remaining": "No internal oil/coolant apertures or failure diagnosis are implied.",
+      "sources": [
+        "S1",
+        "S5"
+      ]
+    },
+    {
+      "feature": "Migration and lower seam accumulation",
+      "identity": "Supplied case accumulation observation; SSM source-to-seam pattern documented",
+      "geometry": "HYPOTHETICAL_CURVES_AND_ESTIMATED_REGION",
+      "change": "Independent LH/RH exhaust migration, rear downward migration and lower seam overlays.",
+      "remaining": "Curves are not oil-flow simulation, confirmed drains, internal galleries or proof of source. No probabilities assigned.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "feature": "Access-analysis viewpoints and firewall context",
+      "identity": "PROPOSED_ONLY",
+      "geometry": "NON_PHYSICAL_CAMERA_PROPOSALS",
+      "change": "Above/behind heads, below rear block, LH/RH wheel-well directions and both head/block joints.",
+      "remaining": "No probe fit, real opening, removal sequence or clearance is established. Firewall plane is arbitrary context; wheel wells/bodywork are not reconstructed.",
+      "sources": []
+    }
+  ],
+  "source_quality_notes": [
+    "Direct generic TSB-search URLs returned titles unrelated to the requested SSM numbers and were rejected; a number alone is not sufficient provenance.",
+    "The manufacturer NHTSA-hosted SSM51477 was used for the rear block source-to-seam statement.",
+    "No factory rear-head ball-plug map or confirmed additional under-manifold oil-closure map was recovered.",
+    "Factory identity/layout evidence does not verify reconstructed dimensions or diagnostic conclusions."
+  ],
+  "accuracy_policy": "All reconstructed physical dimensions remain estimates. Verified means source-supported component identity or general relationship, never measured CAD unless explicitly stated. No feature in this package is measured CAD.",
+  "validation_scope": "Structural export and review-interaction tests do not validate fitment, clearances, gallery connections or repair procedures."
+}

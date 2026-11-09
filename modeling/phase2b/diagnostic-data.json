@@ -1,0 +1,586 @@
+{
+  "version": "phase2b-r01",
+  "coordinates": "+X vehicle right, +Y up, +Z rear; estimated metres",
+  "overlay_disclaimer": "Regions and paths are non-physical annotations. Amber = unresolved/source region, cyan = sealing interface, orange dashed = hypothetical migration, violet = proposed camera approaches.",
+  "overlays": [
+    {
+      "id": "head-lh",
+      "label": "LH rear head / plug investigation",
+      "kind": "region",
+      "status": "UNRESOLVED",
+      "color": "#ffbd68",
+      "defaultVisible": true,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.18,
+              0.23,
+              0.322
+            ],
+            [
+              -0.36,
+              0.23,
+              0.322
+            ],
+            [
+              -0.36,
+              0.4,
+              0.322
+            ],
+            [
+              -0.18,
+              0.4,
+              0.322
+            ],
+            [
+              -0.18,
+              0.23,
+              0.322
+            ]
+          ],
+          "parent": "Head_LH"
+        }
+      ],
+      "detail": "Region only. Exact ball-style closure positions and oil-passage functions were not established in the reviewed factory sources. Outline is not a plug or service-access opening.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "head-rh",
+      "label": "RH rear head / plug investigation",
+      "kind": "region",
+      "status": "UNRESOLVED",
+      "color": "#ffbd68",
+      "defaultVisible": true,
+      "paths": [
+        {
+          "points": [
+            [
+              0.18,
+              0.23,
+              0.322
+            ],
+            [
+              0.36,
+              0.23,
+              0.322
+            ],
+            [
+              0.36,
+              0.4,
+              0.322
+            ],
+            [
+              0.18,
+              0.4,
+              0.322
+            ],
+            [
+              0.18,
+              0.23,
+              0.322
+            ]
+          ],
+          "parent": "Head_RH"
+        }
+      ],
+      "detail": "Region only. Exact ball-style closure positions and oil-passage functions were not established in the reviewed factory sources. Outline is not a plug or service-access opening.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "block-gallery",
+      "label": "Rear block gallery-plug investigation",
+      "kind": "region",
+      "status": "DOCUMENTED_SOURCE_APPROXIMATE_REGION",
+      "color": "#ffbd68",
+      "defaultVisible": true,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.3,
+              0.07,
+              0.327
+            ],
+            [
+              0.3,
+              0.07,
+              0.327
+            ],
+            [
+              0.3,
+              0.2,
+              0.327
+            ],
+            [
+              -0.3,
+              0.2,
+              0.327
+            ],
+            [
+              -0.3,
+              0.07,
+              0.327
+            ]
+          ],
+          "parent": "RearFace"
+        }
+      ],
+      "detail": "SSM51477 identifies a threaded plug at an upper rear block corner and references SSM49817. The broad band bounds an investigation area; it does not identify a plug centre or a bank. Exact side/centre/diameter on this reconstruction remain unverified. No physical plug is modeled.",
+      "sources": [
+        "https://static.nhtsa.gov/odi/tsbs/2013/MC-10072200-0699.pdf",
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "gasket-lh",
+      "label": "LH external head-gasket perimeter",
+      "kind": "interface",
+      "status": "VERIFIED_INTERFACE_ESTIMATED_OUTLINE",
+      "color": "#6edce1",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.11519743878930845,
+              0.2976309883354377,
+              -0.3
+            ],
+            [
+              -0.2976309883354377,
+              0.11519743878930845,
+              -0.3
+            ],
+            [
+              -0.2976309883354377,
+              0.11519743878930845,
+              0.29
+            ],
+            [
+              -0.11519743878930845,
+              0.2976309883354377,
+              0.29
+            ],
+            [
+              -0.11519743878930845,
+              0.2976309883354377,
+              -0.3
+            ]
+          ],
+          "parent": "HeadGasket_LH"
+        }
+      ],
+      "detail": "The head/block sealing interface is verified. This external outline, thickness and position are estimated; no oil or coolant passages are represented.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "gasket-rh",
+      "label": "RH external head-gasket perimeter",
+      "kind": "interface",
+      "status": "VERIFIED_INTERFACE_ESTIMATED_OUTLINE",
+      "color": "#6edce1",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              0.11519743878930845,
+              0.2976309883354377,
+              -0.3
+            ],
+            [
+              0.2976309883354377,
+              0.11519743878930845,
+              -0.3
+            ],
+            [
+              0.2976309883354377,
+              0.11519743878930845,
+              0.29
+            ],
+            [
+              0.11519743878930845,
+              0.2976309883354377,
+              0.29
+            ],
+            [
+              0.11519743878930845,
+              0.2976309883354377,
+              -0.3
+            ]
+          ],
+          "parent": "HeadGasket_RH"
+        }
+      ],
+      "detail": "The head/block sealing interface is verified. This external outline, thickness and position are estimated; no oil or coolant passages are represented.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "oil-lh",
+      "label": "Hypothetical oil migration / LH exhaust",
+      "kind": "hypothesis",
+      "status": "HYPOTHETICAL_NOT_CONFIRMED_FLOW",
+      "color": "#f79b47",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.26,
+              0.34,
+              0.34
+            ],
+            [
+              -0.34,
+              0.23,
+              0.34
+            ],
+            [
+              -0.405,
+              0.19,
+              0.27
+            ],
+            [
+              -0.47,
+              0.13,
+              0.19
+            ],
+            [
+              -0.47,
+              0.09,
+              0.07
+            ]
+          ],
+          "parent": "Block"
+        }
+      ],
+      "detail": "Illustrative possible external migration toward a hot exhaust surface. No leak source, drain, gallery connection or probability is established. Not simulated oil flow.",
+      "sources": []
+    },
+    {
+      "id": "oil-rh",
+      "label": "Hypothetical oil migration / RH exhaust",
+      "kind": "hypothesis",
+      "status": "HYPOTHETICAL_NOT_CONFIRMED_FLOW",
+      "color": "#f79b47",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              0.26,
+              0.34,
+              0.34
+            ],
+            [
+              0.34,
+              0.23,
+              0.34
+            ],
+            [
+              0.405,
+              0.19,
+              0.27
+            ],
+            [
+              0.47,
+              0.13,
+              0.19
+            ],
+            [
+              0.47,
+              0.09,
+              0.07
+            ]
+          ],
+          "parent": "Block"
+        }
+      ],
+      "detail": "Illustrative possible external migration toward a hot exhaust surface. No leak source, drain, gallery connection or probability is established. Not simulated oil flow.",
+      "sources": []
+    },
+    {
+      "id": "rear-runoff",
+      "label": "Hypothetical migration toward lower seam",
+      "kind": "hypothesis",
+      "status": "DOCUMENTED_PATTERN_HYPOTHETICAL_CURVE",
+      "color": "#f79b47",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              0,
+              0.17,
+              0.342
+            ],
+            [
+              0.11,
+              0.06,
+              0.347
+            ],
+            [
+              0.13,
+              -0.07,
+              0.35
+            ],
+            [
+              0.08,
+              -0.22,
+              0.357
+            ],
+            [
+              0,
+              -0.34,
+              0.36
+            ]
+          ],
+          "parent": "RearFace"
+        }
+      ],
+      "detail": "SSM51477 describes oil from the upper rear block plug collecting around the lower bellhousing. This curve is hypothetical; it does not verify a casting channel or identify the source in this case. The bulletin concerns PDI and also discusses anti-corrosion oil.",
+      "sources": [
+        "https://static.nhtsa.gov/odi/tsbs/2013/MC-10072200-0699.pdf"
+      ]
+    },
+    {
+      "id": "lower-seam",
+      "label": "Lower bellhousing seam / accumulation region",
+      "kind": "observation",
+      "status": "SUPPLIED_CASE_OBSERVATION_POSITION_ESTIMATED",
+      "color": "#ffd58b",
+      "defaultVisible": true,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.09,
+              -0.322,
+              0.36
+            ],
+            [
+              -0.06,
+              -0.35,
+              0.36
+            ],
+            [
+              0.06,
+              -0.35,
+              0.36
+            ],
+            [
+              0.09,
+              -0.322,
+              0.36
+            ]
+          ],
+          "parent": "RearFace"
+        }
+      ],
+      "detail": "The supplied case reports accumulation at the lower engine/transmission seam. Its placement is estimated. Accumulation does not prove a rear main seal leak.",
+      "sources": []
+    },
+    {
+      "id": "block-side-lh",
+      "label": "LH hidden exhaust-side block region",
+      "kind": "region",
+      "status": "UNRESOLVED_NO_VERIFIED_CLOSURES",
+      "color": "#d9a1ff",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              -0.323,
+              -0.04,
+              -0.21
+            ],
+            [
+              -0.323,
+              0.105,
+              -0.21
+            ],
+            [
+              -0.323,
+              0.105,
+              0.24
+            ],
+            [
+              -0.323,
+              -0.04,
+              0.24
+            ],
+            [
+              -0.323,
+              -0.04,
+              -0.21
+            ]
+          ],
+          "parent": "Block"
+        }
+      ],
+      "detail": "Investigation area behind the manifold. Reviewed sources do not establish additional pressurized-oil closures beneath the NA manifolds. Absence of confirmation is not proof of absence. No plugs or passages have been added.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    },
+    {
+      "id": "block-side-rh",
+      "label": "RH hidden exhaust-side block region",
+      "kind": "region",
+      "status": "UNRESOLVED_NO_VERIFIED_CLOSURES",
+      "color": "#d9a1ff",
+      "defaultVisible": false,
+      "paths": [
+        {
+          "points": [
+            [
+              0.323,
+              -0.04,
+              -0.21
+            ],
+            [
+              0.323,
+              0.105,
+              -0.21
+            ],
+            [
+              0.323,
+              0.105,
+              0.24
+            ],
+            [
+              0.323,
+              -0.04,
+              0.24
+            ],
+            [
+              0.323,
+              -0.04,
+              -0.21
+            ]
+          ],
+          "parent": "Block"
+        }
+      ],
+      "detail": "Investigation area behind the manifold. Reviewed sources do not establish additional pressurized-oil closures beneath the NA manifolds. Absence of confirmation is not proof of absence. No plugs or passages have been added.",
+      "sources": [
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43093/brand/land-rover/",
+        "https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52945.53046.43096/brand/land-rover/"
+      ]
+    }
+  ],
+  "camera_approaches": [
+    {
+      "id": "above-rear",
+      "label": "Above / behind heads",
+      "position": [
+        0,
+        1.12,
+        1.03
+      ],
+      "target": [
+        0,
+        0.3,
+        0.3
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    },
+    {
+      "id": "under-rear",
+      "label": "Underneath / rear block",
+      "position": [
+        0.05,
+        -0.93,
+        1.03
+      ],
+      "target": [
+        0,
+        -0.04,
+        0.32
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    },
+    {
+      "id": "left-wheel",
+      "label": "LH wheel-well direction",
+      "position": [
+        -1.15,
+        0.13,
+        0.18
+      ],
+      "target": [
+        -0.33,
+        0.18,
+        0.12
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    },
+    {
+      "id": "right-wheel",
+      "label": "RH wheel-well direction",
+      "position": [
+        1.15,
+        0.13,
+        0.18
+      ],
+      "target": [
+        0.33,
+        0.18,
+        0.12
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    },
+    {
+      "id": "joint-lh",
+      "label": "LH head/block joint",
+      "position": [
+        -0.85,
+        0.62,
+        0.75
+      ],
+      "target": [
+        -0.27,
+        0.22,
+        0.27
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    },
+    {
+      "id": "joint-rh",
+      "label": "RH head/block joint",
+      "position": [
+        0.85,
+        0.62,
+        0.75
+      ],
+      "target": [
+        0.27,
+        0.22,
+        0.27
+      ],
+      "status": "PROPOSED_CAMERA_APPROACH_NOT_VERIFIED_CLEARANCE",
+      "detail": "Viewpoint proposal only. No wheel-well opening, probe fit, collision-free trajectory, required removal or installed vehicle clearance is established."
+    }
+  ],
+  "firewall_context": {
+    "position_z": 0.78,
+    "status": "ARBITRARY_CONTEXT_BOUNDARY_NOT_MEASURED",
+    "detail": "Representative firewall plane only; its location is arbitrary and cannot establish clearance."
+  }
+}
