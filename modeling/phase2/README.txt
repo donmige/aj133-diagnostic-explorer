@@ -13,6 +13,7 @@ validation.json — machine-readable structural checks (not mechanical validatio
 reconstruct.py — deterministic Blender 4.3+ build/export/render script.
 validate_glb.py — Python standard-library structural validation.
 browser-validation.json — isolated Three.js load/raycast/opacity/explosion checks.
+review-comparison.png — before/after and exposed-surface review sheet.
 PNG renders — assembled, rear, top, left, exposed valley, exposed rear and exploded.
 
 REPRODUCE
