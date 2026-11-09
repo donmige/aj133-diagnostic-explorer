@@ -11,6 +11,8 @@ for name in expected:
  assert name in names,name
  assert names[name]['extras']['assembly_key']
  assert names[name]['extras']['geometry_status'] in ['APPROXIMATE','UNVERIFIED_ENVELOPE']
+assert {names[name]['extras']['assembly_key'] for name in expected}=={'Block','Cylinder heads','Valve covers','Intake manifold','Oil cooler','Exhaust & shields','Rear face','Bellhousing','Oil pan'}
+assert not any(n.get('name','').startswith('REVIEW_STUDIO') for n in nodes)
 anchors=[n for n in nodes if n.get('name','').startswith('anchor__')]
 assert len(anchors)==12
 for n in anchors:assert n['extras']['physical_feature'] is False and 'mesh' not in n
